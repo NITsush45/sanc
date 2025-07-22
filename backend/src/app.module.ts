@@ -15,6 +15,7 @@ import { NotificationsModule } from './notifications/notifications.module';
       type: 'postgres',
       url: process.env.DATABASE_URL,
       synchronize: true,
+      ssl: true, 
       autoLoadEntities: true,
     }),
     AuthModule,

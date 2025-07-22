@@ -25,6 +25,7 @@ exports.AppModule = AppModule = __decorate([
             }),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
+                ssl: true, 
                 url: process.env.DATABASE_URL,
                 synchronize: true,
                 autoLoadEntities: true,
