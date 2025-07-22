@@ -1,7 +1,11 @@
 FROM node:18-alpine
+
 WORKDIR /app
-COPY package.json package-lock.json tsconfig.json ./
+
+COPY backend/package.json backend/package-lock.json backend/tsconfig.json ./
 RUN npm ci
-COPY src/ src/
+
+COPY backend/src/ src/
 RUN npm run build
+
 CMD ["node", "dist/main.js"]
